@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dan Ackerman — Tech Journalist, Author, Speaker</title>
+<meta name="description" content="Dan Ackerman is a veteran tech journalist, Editor-in-Chief at Micro Center, former EIC of Gizmodo, CNET editorial director, and author of The Tetris Effect.">
+<meta property="og:title" content="Dan Ackerman — Tech Journalist, Author, Speaker">
+<meta property="og:description" content="Editor-in-Chief at Micro Center. Former EIC of Gizmodo, CNET editorial director, CBS Mornings tech expert, and author of The Tetris Effect.">
+<meta property="og:image" content="https://danackerman.com/assets/images/image01.jpg">
+<link rel="canonical" href="https://danackerman.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://danackerman.com/#profilepage",
+      "url": "https://danackerman.com/",
+      "name": "Dan Ackerman — Tech Journalist, Author, Speaker",
+      "inLanguage": "en-US",
+      "mainEntity": { "@id": "https://danackerman.com/#person" },
+      "isPartOf": { "@id": "https://danackerman.com/#website" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://danackerman.com/#website",
+      "url": "https://danackerman.com/",
+      "name": "Dan Ackerman",
+      "publisher": { "@id": "https://danackerman.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://danackerman.com/#person",
+      "name": "Dan Ackerman",
+      "url": "https://danackerman.com/",
+      "image": "https://danackerman.com/assets/images/image01.jpg",
+      "description": "New York tech journalist, author, speaker and media executive. Editor-in-Chief at Micro Center and founder of MC News; former Editor-in-Chief of Gizmodo, editorial director at CNET, tech expert on CBS Mornings, and author of The Tetris Effect.",
+      "jobTitle": "Editor-in-Chief",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Micro Center",
+        "url": "https://www.microcenter.com/"
+      },
+      "homeLocation": { "@type": "Place", "name": "New York, NY" },
+      "hasOccupation": [
+        { "@type": "Occupation", "name": "Journalist" },
+        { "@type": "Occupation", "name": "Author" },
+        { "@type": "Occupation", "name": "Public speaker" }
+      ],
+      "knowsAbout": [
+        "Consumer technology", "Artificial intelligence", "Laptops", "PC hardware",
+        "Video games", "Gaming history", "Tetris", "Digital media", "Journalism",
+        "Product reviews"
+      ],
+      "affiliation": [
+        { "@type": "Organization", "name": "Gizmodo", "url": "https://gizmodo.com/" },
+        { "@type": "Organization", "name": "CNET", "url": "https://www.cnet.com/" },
+        { "@type": "Organization", "name": "CBS Mornings", "url": "https://www.cbsnews.com/cbs-mornings/" }
+      ],
+      "sameAs": [
+        "https://danackerman.substack.com",
+        "https://www.linkedin.com/in/danackerman",
+        "https://danackerman.bsky.social",
+        "https://www.threads.net/@danack",
+        "https://www.instagram.com/danack",
+        "https://www.tiktok.com/@danacknyc",
+        "https://www.youtube.com/danackerman",
+        "https://www.cnet.com/profiles/dackerman/"
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://danackerman.com/#tetris-effect",
+      "name": "The Tetris Effect",
+      "alternateName": "The Tetris Effect: The Game That Hypnotized the World",
+      "author": { "@id": "https://danackerman.com/#person" },
+      "isbn": "9781610396110",
+      "image": "https://www.hachettebookgroup.com/wp-content/uploads/2026/02/9781610396110.jpg",
+      "publisher": { "@type": "Organization", "name": "PublicAffairs" },
+      "genre": ["Business", "Video game history"],
+      "url": "https://www.hachettebookgroup.com/titles/dan-ackerman/the-tetris-effect/9781610396110/",
+      "review": {
+        "@type": "Review",
+        "reviewBody": "The story shines.",
+        "author": { "@type": "Organization", "name": "The New York Times" }
+      }
+    },
+    {
+      "@type": "Periodical",
+      "@id": "https://danackerman.substack.com/#newsletter",
+      "name": "Tech Support with Dan Ackerman",
+      "description": "Tech and tools. Games and gadgets. From veteran tech reporter and author Dan Ackerman.",
+      "url": "https://danackerman.substack.com",
+      "author": { "@id": "https://danackerman.com/#person" }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0c0e;
+    --bg-2: #141417;
+    --bg-3: #1c1c21;
+    --line: #2a2a31;
+    --text: #f2efe8;
+    --muted: #9a978f;
+    --accent: #c8ff3d;
+    --accent-ink: #0c0c0e;
+    --pink: #ff5c8a;
+    --cyan: #3de0ff;
+    --orange: #ff9f3d;
+    --radius: 18px;
+    --max: 1180px;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Inter Tight", system-ui, -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 2px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s;
+  }
+  nav.scrolled { border-color: var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-weight: 800; letter-spacing: -.02em; font-size: 18px; display: flex; align-items: center; gap: 10px; }
+  .logo-mark { display: grid; grid-template-columns: repeat(2, 8px); gap: 2px; }
+  .logo-mark span { width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
+  .logo-mark span:nth-child(2) { background: var(--pink); }
+  .logo-mark span:nth-child(3) { background: var(--cyan); }
+  .logo-mark span:nth-child(4) { background: transparent; }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; font-weight: 500; color: var(--muted); }
+  .nav-links a:hover { color: var(--text); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 999px;
+    font-weight: 600; font-size: 15px;
+    transition: transform .2s, background .2s, color .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-ghost { border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--text); }
+  .nav-cta { padding: 9px 16px; font-size: 14px; }
+
+  /* Hero */
+  .hero { padding: 72px 0 96px; position: relative; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 64px; align-items: center; }
+  .hero h1 {
+    font-size: clamp(54px, 9vw, 128px);
+    line-height: .92; letter-spacing: -.045em; font-weight: 800;
+    margin: 22px 0 28px;
+  }
+  .hero h1 em { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.02em; color: var(--accent); }
+  .hero p.lede { font-size: clamp(18px, 2vw, 22px); color: #cfccc4; max-width: 560px; margin-bottom: 36px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .portrait { position: relative; }
+  .portrait-frame {
+    aspect-ratio: 4/5; border-radius: 24px; overflow: hidden;
+    background: var(--bg-3); border: 1px solid var(--line);
+    transform: rotate(2deg);
+  }
+  .portrait-frame img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.95) contrast(1.03); }
+  .portrait-credit { position: absolute; bottom: -28px; right: 4px; font-size: 10px; }
+  .badge {
+    position: absolute; left: -36px; bottom: 48px;
+    background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px;
+    padding: 14px 18px; transform: rotate(-3deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,.45);
+  }
+  .badge strong { display: block; font-size: 15px; }
+  .badge .mono { font-size: 10px; }
+  .blocks { position: absolute; top: -26px; right: -18px; display: grid; grid-template-columns: repeat(3, 22px); gap: 3px; transform: rotate(8deg); }
+  .blocks i { width: 22px; height: 22px; border-radius: 4px; }
+
+  /* Marquee */
+  .marquee { border-block: 1px solid var(--line); overflow: hidden; padding: 22px 0; background: var(--bg-2); }
+  .marquee-track { display: flex; gap: 56px; width: max-content; animation: scroll 38s linear infinite; }
+  .marquee-track span { font-family: var(--serif); font-size: 34px; font-style: italic; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 56px; }
+  .marquee-track span::after { content: "✦"; font-style: normal; font-size: 16px; color: var(--accent); }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* Sections */
+  section { padding: 112px 0; }
+  .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 56px; flex-wrap: wrap; }
+  h2 { font-size: clamp(38px, 5.5vw, 68px); line-height: 1; letter-spacing: -.035em; font-weight: 800; margin-top: 14px; }
+  h2 em { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.01em; }
+  .section-head p { max-width: 420px; color: var(--muted); }
+
+  /* Career */
+  .career { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .role {
+    background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; display: flex; flex-direction: column; min-height: 300px;
+    transition: border-color .25s, transform .25s;
+  }
+  .role:hover { border-color: #44444d; transform: translateY(-4px); }
+  .role.current { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .role.current .mono, .role.current p { color: #2b3310; }
+  .role h3 { font-size: 28px; letter-spacing: -.03em; line-height: 1.05; margin: 18px 0 6px; }
+  .role .title { font-weight: 600; font-size: 15px; margin-bottom: 14px; }
+  .role p { color: var(--muted); font-size: 15px; line-height: 1.55; }
+  .role .link { margin-top: auto; padding-top: 20px; font-size: 14px; font-weight: 600; }
+  .role .link:hover { text-decoration: underline; }
+  .bylines { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .chip { border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 14px; color: #cfccc4; }
+
+  /* Newsletter */
+  #newsletter { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .nl-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; }
+  .nl-pitch { position: sticky; top: 110px; align-self: start; }
+  .nl-pitch .nl-logo { width: 72px; height: 72px; border-radius: 16px; margin: 24px 0 20px; }
+  .nl-pitch h3 { font-size: 34px; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 14px; }
+  .nl-pitch p { color: var(--muted); margin-bottom: 28px; }
+  .posts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .post { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .25s, border-color .25s; }
+  .post:hover { transform: translateY(-4px); border-color: #44444d; }
+  .post-img { aspect-ratio: 16/9; overflow: hidden; background: var(--bg-3); }
+  .post-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .post:hover .post-img img { transform: scale(1.05); }
+  .post-body { padding: 18px 20px 22px; }
+  .post h4 { font-size: 19px; line-height: 1.25; letter-spacing: -.015em; margin: 8px 0; }
+  .post p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+  .post .mono { font-size: 10.5px; }
+
+  /* Book */
+  .book-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: center; }
+  .cover {
+    display: block; max-width: 360px; margin: 0 auto; border-radius: 4px 10px 10px 4px;
+    background: var(--bg-3);
+    box-shadow: 30px 40px 80px rgba(0,0,0,.6);
+    position: relative; overflow: hidden;
+    transform: perspective(1200px) rotateY(-12deg);
+    transition: transform .5s;
+  }
+  .cover img { width: 100%; height: auto; }
+  .cover::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 10px; background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(255,255,255,.08) 60%, transparent); }
+  .cover:hover { transform: perspective(1200px) rotateY(0deg); }
+  .cover-title { font-size: 46px; font-weight: 800; line-height: .95; letter-spacing: -.04em; position: relative; z-index: 2; }
+  .cover-title small { display: block; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 24px; color: var(--accent); letter-spacing: 0; margin-bottom: 6px; }
+  .cover-sub { font-size: 13px; color: #b9b8d6; position: relative; z-index: 2; }
+  .cover-author { font-family: var(--mono); font-size: 13px; letter-spacing: .2em; text-transform: uppercase; position: relative; z-index: 2; }
+  .cover-pieces { position: absolute; inset: 0; z-index: 1; }
+  .cover-pieces i { position: absolute; width: 26px; height: 26px; border-radius: 4px; opacity: .9; }
+  .book-copy p { color: #cfccc4; font-size: 19px; margin: 24px 0; max-width: 560px; }
+  .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 32px 0 36px; }
+  .quote { border-left: 2px solid var(--accent); padding: 4px 0 4px 16px; }
+  .quote q { font-family: var(--serif); font-size: 24px; font-style: italic; line-height: 1.2; display: block; }
+  .quote .mono { margin-top: 6px; display: block; font-size: 11px; }
+
+  /* Speaking */
+  #speaking { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .speak-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .speak { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: var(--bg); }
+  .speak .num { font-family: var(--mono); color: var(--accent); font-size: 13px; }
+  .speak h3 { font-size: 21px; letter-spacing: -.02em; margin: 34px 0 8px; }
+  .speak p { color: var(--muted); font-size: 15px; }
+  .venues { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: baseline; }
+  .venues span:not(.mono) { font-size: clamp(26px, 3.4vw, 44px); font-weight: 800; letter-spacing: -.03em; color: #3a3a42; transition: color .25s; }
+  .venues span:hover { color: var(--text); }
+  .venues .mono { flex-basis: 100%; }
+
+  /* Media + Apps */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .panel { border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; background: var(--bg-2); }
+  .panel h3 { font-size: 28px; letter-spacing: -.03em; margin: 16px 0 12px; }
+  .panel p { color: var(--muted); }
+  .guests { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .apps { margin-top: 22px; display: grid; gap: 10px; }
+  .app { display: flex; justify-content: space-between; align-items: center; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); transition: border-color .25s; }
+  .app:hover { border-color: var(--accent); }
+  .app strong { font-size: 17px; }
+  .app span { color: var(--muted); font-size: 14px; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 140px 0 120px; }
+  .contact h2 { font-size: clamp(48px, 9vw, 120px); line-height: .92; }
+  .contact p { color: var(--muted); max-width: 560px; margin: 28px auto 40px; font-size: 19px; }
+  .contact .btn-primary { font-size: 18px; padding: 18px 30px; }
+  .socials { margin-top: 56px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .socials a { border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; font-size: 14px; font-weight: 500; transition: all .2s; }
+  .socials a:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+  footer { border-top: 1px solid var(--line); padding: 28px 0; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; }
+    .marquee-track { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .hero-grid, .nl-grid, .book-grid { grid-template-columns: 1fr; gap: 56px; }
+    .portrait { max-width: 420px; margin: 0 auto; width: 100%; }
+    .career, .speak-grid { grid-template-columns: 1fr 1fr; }
+    .nl-pitch { position: static; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    section { padding: 80px 0; }
+    .hero { padding: 40px 0 72px; }
+    .career, .speak-grid, .posts, .two-col, .quotes { grid-template-columns: 1fr; }
+    .role { min-height: 0; }
+    .badge { left: -6px; }
+    .blocks { right: -4px; }
+    .marquee-track span { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="logo-mark"><span></span><span></span><span></span><span></span></span>Dan Ackerman</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="#book">Book</a>
+      <a href="#speaking">Speaking</a>
+    </div>
+    <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="mono eyebrow">Journalist · Author · Speaker · New York</span>
+      <h1>Making sense of <em>tech</em> for people who use it.</h1>
+      <p class="lede">I'm Dan Ackerman, Editor-in-Chief at Micro Center and founder of MC News. Before that: Editor-in-Chief of Gizmodo, editorial director at CNET, tech expert on CBS Mornings, and author of <em>The Tetris Effect</em>.</p>
+      <div class="hero-actions">
+        <a href="https://danackerman.substack.com" class="btn btn-primary" target="_blank" rel="noopener">Read the newsletter →</a>
+        <a href="#speaking" class="btn btn-ghost">Book me to speak</a>
+      </div>
+    </div>
+    <div class="portrait reveal">
+      <div class="blocks" aria-hidden="true">
+        <i style="background:var(--accent)"></i><i style="background:var(--accent)"></i><i style="background:var(--accent)"></i>
+        <i></i><i style="background:var(--accent)"></i><i></i>
+      </div>
+      <div class="portrait-frame">
+        <img src="https://danackerman.com/assets/images/image01.jpg" alt="Portrait of Dan Ackerman">
+      </div>
+      <div class="badge">
+        <span class="mono">Now</span>
+        <strong>Editor-in-Chief, Micro Center</strong>
+      </div>
+      <span class="mono portrait-credit">Photo © Cayce Pollard</span>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Micro Center</span><span>Gizmodo</span><span>CNET</span><span>CBS Mornings</span><span>WIRED</span><span>SPIN</span><span>Maxim</span><span>Men's Journal</span><span>The Tetris Effect</span>
+    <span>Micro Center</span><span>Gizmodo</span><span>CNET</span><span>CBS Mornings</span><span>WIRED</span><span>SPIN</span><span>Maxim</span><span>Men's Journal</span><span>The Tetris Effect</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="mono eyebrow">Career</span>
+        <h2>Two decades of <em>testing,</em><br>writing &amp; leading newsrooms.</h2>
+      </div>
+      <p>From reviewing hundreds of laptops in CNET's New York lab to running one of the web's best-known tech brands, I've spent my career helping people buy, use and understand technology.</p>
+    </div>
+    <div class="career">
+      <article class="role current reveal">
+        <span class="mono">Now</span>
+        <h3>Micro Center</h3>
+        <div class="title">Editor-in-Chief</div>
+        <p>Founded MC News and lead editorial vision and content strategy, covering AI tools, PC hardware and practical guidance for pros, gamers and creators.</p>
+        <a class="link" href="https://www.microcenter.com/site/mc-news/default.aspx" target="_blank" rel="noopener">Read MC News →</a>
+      </article>
+      <article class="role reveal">
+        <span class="mono">Previously</span>
+        <h3>Gizmodo</h3>
+        <div class="title">Editor-in-Chief</div>
+        <p>Redefined the publication's editorial voice and drove growth and reader engagement.</p>
+      </article>
+      <article class="role reveal">
+        <span class="mono">Previously</span>
+        <h3>CNET</h3>
+        <div class="title">Editorial Director</div>
+        <p>Led teams covering laptops, gaming and home entertainment, and personally tested and reviewed hundreds of products.</p>
+        <a class="link" href="https://www.cnet.com/profiles/dackerman/" target="_blank" rel="noopener">CNET archive →</a>
+      </article>
+      <article class="role reveal">
+        <span class="mono">On air</span>
+        <h3>CBS Mornings</h3>
+        <div class="title">Tech Expert</div>
+        <p>Spent several years as the show's in-house tech expert, explaining gadgets and trends to a national audience.</p>
+      </article>
+    </div>
+    <div class="bylines reveal">
+      <span class="mono" style="margin-right:6px">Bylines &amp; quotes</span>
+      <span class="chip">WIRED</span><span class="chip">SPIN</span><span class="chip">Maxim</span><span class="chip">Men's Journal</span><span class="chip">Blender</span><span class="chip">The New York Times</span><span class="chip">USA Today</span><span class="chip">The Atlantic</span>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="wrap nl-grid">
+    <div class="nl-pitch reveal">
+      <span class="mono eyebrow">Newsletter</span>
+      <img class="nl-logo" src="https://substackcdn.com/image/fetch/w_144,h_144,c_fill,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2d5a93-8969-4033-9e77-781073d99a76_1024x1024.png" alt="Tech Support with Dan Ackerman logo">
+      <h3>Tech Support with Dan Ackerman</h3>
+      <p>Tech and tools. Games and gadgets. Sharp takes on AI, hardware, gaming and the future of media, delivered to your inbox.</p>
+      <a href="https://danackerman.substack.com/subscribe" class="btn btn-primary" target="_blank" rel="noopener">Subscribe free →</a>
+    </div>
+    <div class="posts">
+      <a class="post reveal" href="https://danackerman.substack.com/p/the-era-of-local-ai-may-finally-be" target="_blank" rel="noopener">
+        <div class="post-img"><img loading="lazy" alt="" src="https://substackcdn.com/image/fetch/w_640,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6050ee2d-022e-49ca-8988-bea98d448626_2560x1440.jpeg"></div>
+        <div class="post-body"><span class="mono">Oct 16, 2026</span><h4>The Era of Local AI May Finally Be Here</h4><p>Why pay for a cloud AI when you can run it yourself on-device?</p></div>
+      </a>
+      <a class="post reveal" href="https://danackerman.substack.com/p/a-bloodbath-for-local-news" target="_blank" rel="noopener">
+        <div class="post-img"><img loading="lazy" alt="" src="https://substackcdn.com/image/fetch/w_640,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff29c609-7aa0-41dc-8e26-7355afde4d92_2752x1536.jpeg"></div>
+        <div class="post-body"><span class="mono">Sep 23, 2026</span><h4>A Bloodbath for Local News</h4><p>News deserts are about to become drier after major layoffs hit local chains.</p></div>
+      </a>
+      <a class="post reveal" href="https://danackerman.substack.com/p/is-gta-vi-too-big-to-fail" target="_blank" rel="noopener">
+        <div class="post-img"><img loading="lazy" alt="" src="https://substackcdn.com/image/fetch/w_640,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F97ea613b-5aef-466d-9d6d-2fa10f8d7b54_1920x1082.jpeg"></div>
+        <div class="post-body"><span class="mono">Sep 8, 2026</span><h4>Is GTA VI Too Big to Fail?</h4><p>It's hard to take risks when you've got a sure thing.</p></div>
+      </a>
+      <a class="post reveal" href="https://danackerman.substack.com/p/maybe-google-zero-is-good-for-publishers" target="_blank" rel="noopener">
+        <div class="post-img"><img loading="lazy" alt="" src="https://substackcdn.com/image/fetch/w_640,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3f094a31-c869-43f3-a5c8-0ed5bfd125da_2752x1536.png"></div>
+        <div class="post-body"><span class="mono">Jul 27, 2026</span><h4>Maybe Google Zero is Good for Publishers</h4><p>There's less of the open web left, but what remains commands a price premium.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap book-grid">
+    <div class="reveal">
+      <a href="https://amzn.to/4hu6xyp" target="_blank" rel="noopener" class="cover">
+        <img src="https://www.hachettebookgroup.com/wp-content/uploads/2026/02/9781610396110.jpg?w=720"
+             onerror="this.onerror=null;this.src='https://covers.openlibrary.org/b/isbn/9781610396110-L.jpg'"
+             alt="Cover of The Tetris Effect: The Game That Hypnotized the World by Dan Ackerman"
+             width="1711" height="2600">
+      </a>
+    </div>
+    <div class="book-copy reveal">
+      <span class="mono eyebrow">The book</span>
+      <h2>A Cold War thriller about a <em>video game.</em></h2>
+      <p><em>The Tetris Effect</em> (PublicAffairs / Hachette) tells the improbable business and gaming history of how a puzzle created in a Soviet computer lab escaped the Iron Curtain and became one of the most played games on Earth.</p>
+      <div class="quotes">
+        <div class="quote"><q>The story shines.</q><span class="mono">The New York Times</span></div>
+        <div class="quote"><span style="font-family:var(--serif);font-size:24px;line-height:1.2;display:block">Also reviewed by Fortune, WIRED &amp; the LA Review of Books</span><span class="mono">Critical acclaim</span></div>
+      </div>
+      <div class="hero-actions">
+        <a href="https://amzn.to/4hu6xyp" class="btn btn-primary" target="_blank" rel="noopener">Buy the book →</a>
+        <a href="https://www.hachettebookgroup.com/titles/dan-ackerman/the-tetris-effect/9781610396110/" class="btn btn-ghost" target="_blank" rel="noopener">Publisher page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speaking">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="mono eyebrow">Speaking &amp; media</span>
+        <h2>On stage, on air, <em>on the record.</em></h2>
+      </div>
+      <p>I've spoken across the US, UK, China and Saudi Arabia on AI, consumer tech, gaming and the future of media.</p>
+    </div>
+    <div class="speak-grid">
+      <div class="speak reveal"><span class="num">01</span><h3>Keynotes</h3><p>Big-picture talks on AI, gadgets and where tech is headed next.</p></div>
+      <div class="speak reveal"><span class="num">02</span><h3>Panels &amp; moderation</h3><p>Keeping conversations sharp, on time and actually useful.</p></div>
+      <div class="speak reveal"><span class="num">03</span><h3>Fireside chats</h3><p>Interviews with founders, authors and industry leaders.</p></div>
+      <div class="speak reveal"><span class="num">04</span><h3>TV, radio &amp; podcasts</h3><p>A go-to explainer for broadcast and podcast audiences.</p></div>
+    </div>
+    <div class="venues reveal">
+      <span class="mono">Recent stages</span>
+      <span>SXSW</span><span>CES</span><span>New York Comic Con</span><span>Brooklyn Book Festival</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="panel reveal">
+      <span class="mono eyebrow">Podcast</span>
+      <h3>CNET Book Club</h3>
+      <p>I founded and co-hosted CNET's book podcast, talking sci-fi, tech and storytelling with some of the best authors working today.</p>
+      <div class="guests"><span class="chip">Neal Stephenson</span><span class="chip">Andy Weir</span><span class="chip">Walter Mosley</span><span class="chip">Jeff VanderMeer</span></div>
+    </div>
+    <div class="panel reveal">
+      <span class="mono eyebrow">Side projects</span>
+      <h3>Apps I've built</h3>
+      <p>Small, fun tools for book lovers.</p>
+      <div class="apps">
+        <a class="app" href="https://3dbookmark.app" target="_blank" rel="noopener"><strong>3D Bookmark</strong><span>3dbookmark.app ↗</span></a>
+        <a class="app" href="https://shelfyourself.app" target="_blank" rel="noopener"><strong>Shelf Yourself</strong><span>shelfyourself.app ↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <span class="mono eyebrow">Contact</span>
+    <h2 style="margin-top:20px">Let's <em>talk</em> tech.</h2>
+    <p>Speaking engagements, podcast and TV appearances, product news, or just laptop-buying advice. My inbox is open.</p>
+    <a class="btn btn-primary" id="email-btn" href="#contact">Email Dan →</a>
+    <div class="socials">
+      <a href="https://danackerman.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="https://linkedin.com/in/danackerman" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://danackerman.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+      <a href="https://threads.net/@danack" target="_blank" rel="noopener">Threads</a>
+      <a href="https://instagram.com/danack" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@danacknyc" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://youtube.com/danackerman" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© <span id="yr">2026</span> Dan Ackerman</span>
+    <span class="mono">Made in New York</span>
+  </div>
+</footer>
+
+<script>
+  // Email assembled at runtime to deter scrapers
+  (function () {
+    var u = "danacknyc", d = "gmail.com";
+    document.getElementById("email-btn").href = "mailto:" + u + "@" + d;
+  })();
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  var nav = document.getElementById("nav");
+  addEventListener("scroll", function () { nav.classList.toggle("scrolled", scrollY > 10); }, { passive: true });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(function (el, i) {
+    el.style.transitionDelay = (i % 4) * 70 + "ms";
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
