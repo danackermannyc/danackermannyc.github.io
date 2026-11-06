@@ -4,13 +4,12 @@
 
 import { readFile, writeFile } from "node:fs/promises";
 
-const FEED_URL = "https://danackerman.substack.com/feed";
+const BASE = "https://danackerman.substack.com";
 const FILE = new URL("../index.html", import.meta.url);
 const COUNT = 4;
-
-const res = await fetch(FEED_URL, { headers: { "User-Agent": "danackerman-site-updater" } });
-if (!res.ok) throw new Error(`Feed request failed: ${res.status}`);
-const xml = await res.text();
+const BROWSER_HEADERS = {
+  "User-Agent": "danackerman-site-updater (+https://github.com/danackermannyc/danackermannyc.github.io)",
+};
 
 const decodeEntities = (s) =>
   s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
@@ -35,19 +34,55 @@ const sizedImage = (url) => {
   return `https://substackcdn.com/image/fetch/w_640,f_auto,q_auto:good/${encodeURIComponent(raw)}`;
 };
 
-const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, COUNT).map(([, block]) => {
-  const enclosure = block.match(/<enclosure[^>]*url="([^"]+)"/);
-  const date = new Date(tag(block, "pubDate"));
-  return {
-    title: tag(block, "title"),
-    link: tag(block, "link"),
-    description: tag(block, "description").replace(/<[^>]+>/g, ""),
-    image: sizedImage(enclosure ? decodeEntities(enclosure[1]) : ""),
-    date: date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }),
-  };
-});
+const fmtDate = (d) =>
+  new Date(d).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 
-if (items.length === 0) throw new Error("No posts found in feed; leaving page unchanged.");
+// Strategy 1: RSS feed.
+async function fromRss() {
+  const res = await fetch(`${BASE}/feed`, { headers: { ...BROWSER_HEADERS, Accept: "application/rss+xml, application/xml;q=0.9, */*;q=0.8" } });
+  if (!res.ok) throw new Error(`RSS ${res.status}`);
+  const xml = await res.text();
+  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, COUNT).map(([, block]) => {
+    const enclosure = block.match(/<enclosure[^>]*url="([^"]+)"/);
+    return {
+      title: tag(block, "title"),
+      link: tag(block, "link"),
+      description: tag(block, "description").replace(/<[^>]+>/g, ""),
+      image: sizedImage(enclosure ? decodeEntities(enclosure[1]) : ""),
+      date: fmtDate(tag(block, "pubDate")),
+    };
+  });
+}
+
+// Strategy 2: Substack's public archive API (JSON).
+async function fromApi() {
+  const res = await fetch(`${BASE}/api/v1/archive?sort=new&offset=0&limit=${COUNT}`, { headers: { ...BROWSER_HEADERS, Accept: "application/json" } });
+  if (!res.ok) throw new Error(`API ${res.status}`);
+  const posts = await res.json();
+  return posts.slice(0, COUNT).map((p) => ({
+    title: p.title || "",
+    link: p.canonical_url || `${BASE}/p/${p.slug}`,
+    description: p.subtitle || p.description || "",
+    image: sizedImage(p.cover_image || ""),
+    date: fmtDate(p.post_date),
+  }));
+}
+
+let items = [];
+for (const [name, fn] of [["RSS", fromRss], ["API", fromApi]]) {
+  try {
+    items = (await fn()).filter((p) => p.title && p.link);
+    if (items.length) { console.log(`Fetched ${items.length} posts via ${name}.`); break; }
+  } catch (err) {
+    console.log(`${name} failed: ${err.message}`);
+  }
+}
+
+if (items.length === 0) {
+  // Don't block the deploy: keep the posts already on the page.
+  console.log("::warning::Could not fetch Substack posts; leaving existing posts in place.");
+  process.exit(0);
+}
 
 const cards = items.map((p) => `      <a class="post reveal" href="${esc(p.link)}" target="_blank" rel="noopener">
         <div class="post-img">${p.image ? `<img loading="lazy" alt="" src="${esc(p.image)}">` : ""}</div>
