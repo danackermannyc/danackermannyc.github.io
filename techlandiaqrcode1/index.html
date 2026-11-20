@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Invalid QR code — Dan Ackerman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0c0c0e; --line:#2a2a31; --text:#f2efe8; --muted:#9a978f; --accent:#c8ff3d; --pink:#ff5c8a; --cyan:#3de0ff; --status:#ff5c8a; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:"Inter Tight",system-ui,-apple-system,sans-serif; -webkit-font-smoothing:antialiased;
+         min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; }
+  a { color:inherit; text-decoration:none; }
+  header, footer { padding:22px 24px; }
+  .logo { font-weight:800; letter-spacing:-.02em; font-size:18px; display:inline-flex; align-items:center; gap:10px; }
+  .logo-mark { display:grid; grid-template-columns:repeat(2,8px); gap:2px; }
+  .logo-mark span { width:8px; height:8px; border-radius:2px; background:var(--accent); }
+  .logo-mark span:nth-child(2) { background:var(--pink); }
+  .logo-mark span:nth-child(3) { background:var(--cyan); }
+  .logo-mark span:nth-child(4) { background:transparent; }
+  main { flex:1; display:flex; align-items:center; justify-content:center; padding:24px; text-align:center; }
+  .card { max-width:560px; }
+  .icon { width:72px; height:72px; margin:0 auto 28px; border-radius:50%; border:2px solid var(--status); color:var(--status);
+          display:grid; place-items:center; font-size:34px; font-weight:800; line-height:1; }
+  h1 { font-size:clamp(32px,7vw,52px); line-height:1.05; letter-spacing:-.035em; font-weight:800; }
+  .mono { font-family:"JetBrains Mono",ui-monospace,monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  .card .mono { display:block; margin-top:22px; color:var(--status); }
+  footer { border-top:1px solid var(--line); text-align:center; }
+</style>
+</head>
+<body>
+<header><a href="/" class="logo"><span class="logo-mark"><span></span><span></span><span></span><span></span></span>Dan Ackerman</a></header>
+<main>
+  <div class="card">
+    <div class="icon" aria-hidden="true">✕</div>
+    <h1>Sorry, that’s an invalid QR code</h1>
+  </div>
+</main>
+<footer><span class="mono">© 2026 Dan Ackerman</span></footer>
+</body>
+</html>
